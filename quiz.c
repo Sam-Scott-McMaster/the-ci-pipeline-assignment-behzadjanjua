@@ -10,39 +10,47 @@
 
 int main(int argc, char *argv[]) {
 
-    if (strcmp(argv[1], "-1") == 0) {
-        puts("\nQuestion: Is the language C an Object-Oriented Language, or a Procedural Language?\n"); //procedural
-        if (argc > 2 && strcmp(argv[2], "Procedural") == 0) {
-            puts("Success, correct answer!");
+    if (argc == 2){
+        if (strcmp(argv[1], "-1") == 0) {
+            puts("\nQuestion: Is the language C an A:Object-Oriented Language, or B:Procedural Language?\n");
         }
-        else if (argc > 2 && strcmp(argv[2], "Procedural") == 1) {
-            puts("Incorrect attempt... better luck next time!");
+        else if (strcmp(argv[1], "-2") == 0){
+            puts("\nQuestion: What Linux command displays file contents?\n");
         }
-        return EXIT_SUCCESS;
-    }
-    
-    else if (strcmp(argv[1], "-2") == 0) {
-        puts("\nQuestion: What Linux command displays file contents?\n"); //cat
-        if (argc > 2 && strcmp(argv[2], "cat") == 0) { 
-            puts("Success, correct answer!");
-        } 
-        else if (argc > 2 && strcmp(argv[2], "cat") == 1) {
-            puts("Incorrect attempt... better luck next time!");
+        else if (strcmp(argv[1], "-3") == 0){
+            puts("\nQuestion: Which git command uploads the local repository content to a remote repository?\n"); //push 
         }
-        return EXIT_SUCCESS;
     }
 
-    //UNRELATED, ADD A GIT PUSH ORIGIN MAIN TO BASH SCRIPT
-    else if (strcmp(argv[1], "-3") == 0) {
-        puts("\nQuestion: Which git command uploads the local repository content to a remote repository?\n"); //push 
-        if (argc > 2 && strcmp(argv[2], "push") == 0) { 
-            puts("Success, correct answer!");
-        } 
-        else if (argc > 2 && strcmp(argv[2], "push") == 1) {
-            puts("Incorrect attempt... better luck next time!");
+    if (argc == 3) {
+        if (strcmp(argv[1], "-1") == 0) {
+            if (strcmp(argv[2], "B") == 0) {
+                puts("Success! Correct Answer");
+            }
+            else if (strcmp(argv[2], "B") == 1) {
+                puts("Incorrect Answer");
+            }
         }
-        return EXIT_SUCCESS;
+        
+        else if (strcmp(argv[1], "-2") == 0) {
+            if (strcmp(argv[2], "cat") == 0) {
+                puts("Success! Correct Answer");
+            }
+            else if (strcmp(argv[2], "cat") == 1) {
+                puts("Incorrect Answer");
+            }
+        }
+        
+        else if (strcmp(argv[1], "-3") == 0) {
+            if (strcmp(argv[2], "push") == 0) {
+                puts("Success! Correct Answer");
+            }
+            else if (strcmp(argv[2], "push") == 1) {
+                puts("Incorrect Answer");
+            }
+        }
     }
+
     if (strcmp(argv[1], "--help") == 0) {
         puts("\nAsking a Question:");
         puts("./quiz -1             Question 1");
