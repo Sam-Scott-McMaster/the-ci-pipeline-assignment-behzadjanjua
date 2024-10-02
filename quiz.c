@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[]) {
 
-    if (argc == 2){
+    if (argc == 2) {
         if (strcmp(argv[1], "-1") == 0) {
             puts("\nQuestion: Is the language C an A:Object-Oriented Language, or B:Procedural Language?\n");
         }
@@ -20,15 +20,24 @@ int main(int argc, char *argv[]) {
         else if (strcmp(argv[1], "-3") == 0){
             puts("\nQuestion: Which git command uploads the local repository content to a remote repository?\n"); //push 
         }
+        else {
+            puts("\nUsage: quiz [-#] [<answer>]");
+            puts("\nTry 'quiz --help' for more information.\n");
+        }
+        return EXIT_SUCCESS;
     }
 
-    if (argc == 3) {
+    if (argc >= 3) {
         if (strcmp(argv[1], "-1") == 0) {
             if (strcmp(argv[2], "B") == 0) {
                 puts("Success! Correct Answer");
             }
             else if (strcmp(argv[2], "B") == 1) {
                 puts("Incorrect Answer");
+            }
+            else {
+                puts("\nUsage: quiz [-#] [<answer>]");
+                puts("\nTry 'quiz --help' for more information.\n");
             }
         }
         
@@ -49,9 +58,18 @@ int main(int argc, char *argv[]) {
                 puts("Incorrect Answer");
             }
         }
+        return EXIT_SUCCESS;
+    }
+
+    if (argc == 1) {
+        puts("\nUsage: quiz [-#] [<answer>]");
+        puts("\nTry 'quiz --help' for more information.\n");
+        return EXIT_FAILURE;
     }
 
     if (strcmp(argv[1], "--help") == 0) {
+        puts("Usage: quiz [-#] [<answer>]");
+        puts("Try 'quiz --help' for more information.\n");
         puts("\nAsking a Question:");
         puts("./quiz -1             Question 1");
         puts("./quiz -2             Question 2");
