@@ -1,6 +1,6 @@
 # Behzad Janjua, 400516103, October 3rd 2024
 #
-# This script adds, commits, tags (if specified), and pushes the quiz.c file. Alongside git diff and log (to track changes).
+# This script adds, commits, tags (if specified), and pushes the quiz.c file. Alongside git diff (to track changes).
 
 git add quiz.c 
 git diff
