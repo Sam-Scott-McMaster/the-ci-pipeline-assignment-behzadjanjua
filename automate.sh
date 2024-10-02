@@ -13,5 +13,5 @@ else
         git push origin $1
 fi
 git status
-git push
+git push origin main
 git log
