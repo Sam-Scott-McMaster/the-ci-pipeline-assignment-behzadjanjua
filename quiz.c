@@ -10,6 +10,28 @@
 
 int main(int argc, char *argv[]) {
 
+    if (argc == 1) {
+        puts("\nUsage: quiz [-#] [<answer>]");
+        puts("\nTry 'quiz --help' for more information.\n");
+        return EXIT_FAILURE;
+    }
+    
+    if (strcmp(argv[1], "--help") == 0) {
+        puts("Usage: quiz [-#] [<answer>]");
+        puts("Try 'quiz --help' for more information.\n");
+        puts("\nAsking a Question:");
+        puts("./quiz -1             Question 1");
+        puts("./quiz -2             Question 2");
+        puts("./quiz -3             Question 3");
+        puts("\nAnswering a Question (Replace '' with ""):"); 
+        puts("./quiz -1 'answer'    Answering Question 1");
+        puts("./quiz -2 'answer'    Answering Question 1");
+        puts("./quiz -3 'answer'    Answering Question 1");
+        puts("\nAsking for Help:");
+        puts("quiz --help");
+        return EXIT_SUCCESS;
+    }
+    
     if (argc == 2) {
         if (strcmp(argv[1], "-1") == 0) {
             puts("\nQuestion: Is the language C an A:Object-Oriented Language, or B:Procedural Language?\n");
@@ -27,7 +49,7 @@ int main(int argc, char *argv[]) {
         return EXIT_SUCCESS;
     }
 
-    if (argc >= 3) {
+    if (argc == 3) {
         if (strcmp(argv[1], "-1") == 0) {
             if (strcmp(argv[2], "B") == 0) {
                 puts("Success! Correct Answer");
@@ -58,28 +80,6 @@ int main(int argc, char *argv[]) {
                 puts("Incorrect Answer");
             }
         }
-        return EXIT_SUCCESS;
-    }
-
-    if (argc == 1) {
-        puts("\nUsage: quiz [-#] [<answer>]");
-        puts("\nTry 'quiz --help' for more information.\n");
-        return EXIT_FAILURE;
-    }
-
-    if (strcmp(argv[1], "--help") == 0) {
-        puts("Usage: quiz [-#] [<answer>]");
-        puts("Try 'quiz --help' for more information.\n");
-        puts("\nAsking a Question:");
-        puts("./quiz -1             Question 1");
-        puts("./quiz -2             Question 2");
-        puts("./quiz -3             Question 3");
-        puts("\nAnswering a Question (Replace '' with ""):"); 
-        puts("./quiz -1 'answer'    Answering Question 1");
-        puts("./quiz -2 'answer'    Answering Question 1");
-        puts("./quiz -3 'answer'    Answering Question 1");
-        puts("\nAsking for Help:");
-        puts("quiz --help");
         return EXIT_SUCCESS;
     }
 }
