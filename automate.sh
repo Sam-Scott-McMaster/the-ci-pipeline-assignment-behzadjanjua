@@ -1,16 +1,13 @@
 # Behzad Janjua, 400516103, October 3rd 2024
 #
-# This script adds, commits, tags (if specified), and pushes the quiz.c file. Alongside git diff (to track changes).
+# This script automates a Git workflow that stages specific files, commits changes with a custom 
+# message, creates a tag, and pushes both the main branch and tags to the remote repository.
+# After pushing, it checks the repository status.
 
-git add quiz.c 
+git add quiz.c automate.sh
 git diff
-git commit
-if [[ "$1" == "" ]]
-then
-        :
-else
-        git tag $1
-        git push origin $1
-fi
-git status
+git commit -m "$1"
+git tag "$2"
 git push origin main
+git push origin main --tags 
+git status
